@@ -1,0 +1,380 @@
+/* ===== RESET E BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Importa fonte do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+/* ===== VARIÁVEIS DE COR ===== */
+:root {
+    --azul-principal: #1565c0;
+    --azul-claro: #42a5f5;
+    --azul-fundo: #e3f2fd;
+    --verde: #2e7d32;
+    --verde-claro: #a5d6a7;
+    --vermelho: #c62828;
+    --vermelho-claro: #ef9a9a;
+    --cinza-texto: #37474f;
+    --branco: #ffffff;
+    --sombra: rgba(21, 101, 192, 0.18);
+}
+
+/* ===== CORPO ===== */
+body {
+    font-family: 'Nunito', sans-serif;
+    background: linear-gradient(135deg, #bbdefb 0%, #e3f2fd 60%, #e8f5e9 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 30px 16px 50px;
+}
+
+/* ===== CABEÇALHO DA PÁGINA INICIAL ===== */
+.page-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--azul-principal);
+    text-align: center;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.page-subtitle {
+    color: #5c7a9e;
+    font-size: 1rem;
+    margin-bottom: 36px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* ===== GRID DE BOTÕES (index) ===== */
+.grid-exercicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+    max-width: 860px;
+    width: 100%;
+}
+
+/* Cada card de exercício */
+.card-exercicio {
+    background: var(--branco);
+    border-radius: 16px;
+    padding: 26px 22px;
+    box-shadow: 0 6px 24px var(--sombra);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    transition: transform 0.22s, box-shadow 0.22s;
+    border-left: 5px solid var(--azul-claro);
+    text-decoration: none;
+}
+
+.card-exercicio:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 14px 36px var(--sombra);
+    border-left-color: var(--azul-principal);
+}
+
+.card-numero {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--azul-claro);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.card-titulo {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--azul-principal);
+    line-height: 1.35;
+}
+
+.card-desc {
+    font-size: 0.86rem;
+    color: #607d8b;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.card-btn {
+    margin-top: 6px;
+    background: var(--azul-principal);
+    color: var(--branco);
+    border: none;
+    border-radius: 8px;
+    padding: 9px 22px;
+    font-size: 0.93rem;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+    transition: background 0.2s, transform 0.15s;
+    font-family: 'Nunito', sans-serif;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.card-btn:hover {
+    background: #0d47a1;
+    transform: scale(1.04);
+}
+
+/* ===== FORMULÁRIO INTERNO ===== */
+.container-form {
+    background: var(--branco);
+    padding: 42px 38px 36px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px var(--sombra);
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+}
+
+.container-form h2 {
+    color: var(--azul-principal);
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    letter-spacing: -0.3px;
+}
+
+.container-form .subtitulo {
+    color: #78909c;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 28px;
+}
+
+label {
+    display: block;
+    text-align: left;
+    font-weight: 700;
+    color: var(--cinza-texto);
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 11px 14px;
+    margin-bottom: 18px;
+    border: 2px solid #bbdefb;
+    border-radius: 10px;
+    font-size: 0.97rem;
+    font-family: 'Nunito', sans-serif;
+    color: var(--cinza-texto);
+    background: #f8fbff;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: var(--azul-principal);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(21,101,192,0.13);
+    background: #fff;
+}
+
+.btn-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 6px;
+    flex-wrap: wrap;
+}
+
+input[type="submit"] {
+    background: var(--azul-principal);
+    color: var(--branco);
+    border: none;
+    border-radius: 10px;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    letter-spacing: 0.2px;
+}
+
+input[type="submit"]:hover {
+    background: #0d47a1;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(21,101,192,0.25);
+}
+
+input[type="reset"] {
+    background: var(--vermelho);
+    color: var(--branco);
+    border: none;
+    border-radius: 10px;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    transition: background 0.2s, transform 0.15s;
+}
+
+input[type="reset"]:hover {
+    background: #b71c1c;
+    transform: translateY(-2px);
+}
+
+/* Botão voltar */
+.btn-voltar {
+    display: inline-block;
+    margin-top: 20px;
+    background: #eceff1;
+    color: var(--azul-principal);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 24px;
+    font-size: 0.93rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+    transition: background 0.2s;
+}
+
+.btn-voltar:hover {
+    background: #cfd8dc;
+}
+
+/* ===== CAIXA DE RESULTADO ===== */
+.resultado-box {
+    background: linear-gradient(135deg, #ffffff 0%, #e3f2fd 100%);
+    border: 3px solid var(--azul-principal);
+    border-radius: 18px;
+    padding: 36px 32px;
+    margin-top: 28px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 12px 36px var(--sombra);
+    animation: slideIn 0.45s cubic-bezier(.22,.68,0,1.2);
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(22px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.resultado-box h3 {
+    color: var(--azul-principal);
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.resultado-box p {
+    color: #546e7a;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.resultado-box strong {
+    color: var(--azul-principal);
+}
+
+/* Valor de destaque */
+.valor-final {
+    background: linear-gradient(135deg, var(--azul-principal) 0%, var(--azul-claro) 100%);
+    color: var(--branco) !important;
+    font-size: 1.7rem !important;
+    font-weight: 800 !important;
+    margin-top: 20px;
+    padding: 18px 24px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(21,101,192,0.28);
+}
+
+.valor-final strong {
+    color: rgba(255,255,255,0.8) !important;
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+/* Badge aprovado / reprovado */
+.badge {
+    display: inline-block;
+    padding: 10px 28px;
+    border-radius: 50px;
+    font-size: 1.15rem;
+    font-weight: 800;
+    margin-top: 14px;
+    letter-spacing: 0.5px;
+}
+
+.badge-aprovado   { background: var(--verde-claro); color: var(--verde); }
+.badge-reprovado  { background: var(--vermelho-claro); color: var(--vermelho); }
+.badge-exame      { background: #fff9c4; color: #f57f17; }
+.badge-retido     { background: var(--vermelho-claro); color: var(--vermelho); }
+
+/* Tabuada */
+.tabuada-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: 16px;
+    text-align: left;
+}
+
+.tabuada-item {
+    background: #e3f2fd;
+    border-radius: 8px;
+    padding: 9px 16px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.97rem;
+    color: var(--azul-principal);
+    font-weight: 700;
+    border-left: 4px solid var(--azul-claro);
+}
+
+/* Calculadora - botões de operador */
+.op-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.op-btn {
+    background: #e3f2fd;
+    border: 2px solid #bbdefb;
+    border-radius: 8px;
+    padding: 11px 0;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--azul-principal);
+    cursor: pointer;
+    transition: background 0.18s, border-color 0.18s;
+    font-family: 'Space Mono', monospace;
+}
+
+.op-btn:hover,
+.op-btn.selecionado {
+    background: var(--azul-principal);
+    color: var(--branco);
+    border-color: var(--azul-principal);
+}
